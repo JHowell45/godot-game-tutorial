@@ -5,7 +5,7 @@ func _physics_process(delta):
 	velocity = direction * 600
 	move_and_slide()
 	
-	if (get_real_velocity().is_zero_approx()):
+	if velocity.is_zero_approx():
 		get_node("HappyBoo").play_idle_animation()
 	else:
 		get_node("HappyBoo").play_walk_animation()
