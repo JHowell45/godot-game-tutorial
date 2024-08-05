@@ -18,4 +18,4 @@ position = Vector2(113, -1)
 texture = ExtResource("1_g0cfl")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
-position = Vector2(25, -11)
+position = Vector2(29, -11)
