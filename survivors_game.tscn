@@ -19,10 +19,11 @@ script = ExtResource("1_s0c1k")
 layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = -5.0
-offset_top = 3.0
-offset_right = 1910.0
-offset_bottom = 1079.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Player" parent="." instance=ExtResource("1_7clum")]
 position = Vector2(822, 84)
@@ -62,7 +63,38 @@ position = Vector2(1695, -213)
 position = Vector2(1331, -172)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.52
+wait_time = 0.1
 autostart = true
 
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.796078)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -44.0
+offset_right = 141.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 261
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="death" from="Player" to="." method="_on_player_death"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
