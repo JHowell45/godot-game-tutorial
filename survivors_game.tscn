@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://clsh8x8p128aw"]
+[gd_scene load_steps=6 format=3 uid="uid://clsh8x8p128aw"]
 
 [ext_resource type="PackedScene" uid="uid://dlt2wm83dyeo8" path="res://player.tscn" id="1_7clum"]
+[ext_resource type="Script" path="res://survivors_game.gd" id="1_s0c1k"]
 [ext_resource type="PackedScene" uid="uid://7oki3c17qcrj" path="res://pine_tree.tscn" id="2_k80at"]
 [ext_resource type="PackedScene" uid="uid://bsp0lbtxdmej3" path="res://mob.tscn" id="3_d17kw"]
 
@@ -13,6 +14,7 @@ point_count = 5
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(50, 433)
+script = ExtResource("1_s0c1k")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -72,5 +74,13 @@ position = Vector2(1075, 352)
 curve = SubResource("Curve2D_vw4mq")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-161, -576)
+unique_name_in_owner = true
+position = Vector2(654.231, -572.95)
 rotation = 0.0037418
+progress = 815.236
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.52
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
