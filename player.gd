@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 100.0
+signal death
 
 const DAMAGE_RATE = 5
 
@@ -15,5 +15,7 @@ func _physics_process(delta):
 		%HappyBoo.play_walk_animation()
 	
 	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
-	health -= overlapping_mobs.size() * DAMAGE_RATE * delta
+	%ProgressBar.value -= overlapping_mobs.size() * DAMAGE_RATE * delta
+	if %ProgressBar.value <= 0.0:
+		death.emit()
 	
