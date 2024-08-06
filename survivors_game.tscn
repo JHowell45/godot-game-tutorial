@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://clsh8x8p128aw"]
+[gd_scene load_steps=5 format=3 uid="uid://clsh8x8p128aw"]
 
 [ext_resource type="PackedScene" uid="uid://dlt2wm83dyeo8" path="res://player.tscn" id="1_7clum"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_s0c1k"]
 [ext_resource type="PackedScene" uid="uid://7oki3c17qcrj" path="res://pine_tree.tscn" id="2_k80at"]
-[ext_resource type="PackedScene" uid="uid://bsp0lbtxdmej3" path="res://mob.tscn" id="3_d17kw"]
 
 [sub_resource type="Curve2D" id="Curve2D_vw4mq"]
 _data = {
@@ -51,24 +50,6 @@ position = Vector2(1695, -213)
 
 [node name="PineTree8" parent="." instance=ExtResource("2_k80at")]
 position = Vector2(1331, -172)
-
-[node name="Mob" parent="." instance=ExtResource("3_d17kw")]
-position = Vector2(526, 345)
-
-[node name="Mob2" parent="." instance=ExtResource("3_d17kw")]
-position = Vector2(1206, 34)
-
-[node name="Mob3" parent="." instance=ExtResource("3_d17kw")]
-position = Vector2(532, -225)
-
-[node name="Mob4" parent="." instance=ExtResource("3_d17kw")]
-position = Vector2(826, -337)
-
-[node name="Mob5" parent="." instance=ExtResource("3_d17kw")]
-position = Vector2(1121, -267)
-
-[node name="Mob6" parent="." instance=ExtResource("3_d17kw")]
-position = Vector2(1075, 352)
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_vw4mq")
