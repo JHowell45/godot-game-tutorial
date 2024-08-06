@@ -18,3 +18,8 @@ func take_damage():
 	
 	if health == 0:
 		queue_free()
+		
+		const SMOKE = preload("res://smoke_explosion/smoke_explosion.tscn")
+		var new_smoke = SMOKE.instantiate()
+		get_parent().add_child(new_smoke)
+		new_smoke.global_position = global_position
