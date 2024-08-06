@@ -15,5 +15,5 @@ func _physics_process(delta):
 		%HappyBoo.play_walk_animation()
 	
 	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
-	health -= overlapping_mobs * DAMAGE_RATE
+	health -= overlapping_mobs.size() * DAMAGE_RATE
 	
