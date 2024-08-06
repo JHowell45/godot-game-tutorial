@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlt2wm83dyeo8"]
+[gd_scene load_steps=6 format=3 uid="uid://dlt2wm83dyeo8"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_do37v"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_mciqo"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ujv3d"]
 radius = 33.0151
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lt11h"]
+radius = 39.1152
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_do37v")
@@ -21,3 +24,12 @@ shape = SubResource("CircleShape2D_ujv3d")
 [node name="Gun" parent="." instance=ExtResource("3_a7dpx")]
 position = Vector2(0, -47)
 rotation = 0.0115904
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_lt11h")
+debug_color = Color(0.981734, 0, 0.368455, 0.42)
