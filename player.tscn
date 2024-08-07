@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlt2wm83dyeo8"]
+[gd_scene load_steps=9 format=3 uid="uid://dlt2wm83dyeo8"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_do37v"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_mciqo"]
 [ext_resource type="PackedScene" uid="uid://bhe4qmhwqovhy" path="res://gun.tscn" id="3_a7dpx"]
+[ext_resource type="PackedScene" uid="uid://dgmji11k1g5ve" path="res://big_gun.tscn" id="4_jnher"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ujv3d"]
 radius = 33.0151
@@ -38,6 +39,8 @@ shape = SubResource("CircleShape2D_ujv3d")
 [node name="Gun" parent="." instance=ExtResource("3_a7dpx")]
 position = Vector2(0, -47)
 rotation = 0.0115904
+
+[node name="Big Gun" parent="." instance=ExtResource("4_jnher")]
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
