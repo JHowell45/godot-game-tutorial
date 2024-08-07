@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal death
+
 var health = 3;
 @onready var player = get_node("/root/Game/Player")
 
@@ -23,3 +25,4 @@ func take_damage():
 		var new_smoke = SMOKE.instantiate()
 		get_parent().add_child(new_smoke)
 		new_smoke.global_position = global_position
+		death.emit()
